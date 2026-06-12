@@ -56,12 +56,7 @@ const HeroSection = () => {
           animate="visible"
           className="space-y-7 text-center lg:text-left"
         >
-          <motion.div 
-            variants={fadeInUp}
-            className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 text-sm font-medium backdrop-blur-md"
-          >
-            Available for MERN Stack Projects
-          </motion.div>
+          
 
           <div className="space-y-4">
             <motion.h1 
@@ -99,7 +94,7 @@ const HeroSection = () => {
             className="flex flex-wrap gap-5 justify-center lg:justify-start pt-3"
           >
             <a
-              href="https://drive.google.com/file/d/1XbIKfnrf2rmwZqwkpHSlacSM2rqwzEYm/view?usp=drive_link"
+              href='https://drive.google.com/file/d/1CTwAznLeQc_WuhkfjXZTjxX30miPhYIz/view?usp=drive_link'
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-3 rounded-2xl font-semibold bg-gradient-to-r from-cyan-500 to-blue-600 hover:scale-105 transition-all duration-300 shadow-lg shadow-cyan-500/20 block"

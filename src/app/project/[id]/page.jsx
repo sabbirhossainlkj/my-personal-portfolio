@@ -1,10 +1,52 @@
-// app/projects/[id]/page.jsx
 
 import Link from "next/link";
 
 export const projects = [
+{
+  id: "1",
+  slug: "ideavault-platform",
+  projectName: "IdeaVault Platform",
+  category: "Full-Stack Web Application",
+  mainTechnologyStack: [
+    "Next.js",
+    "Tailwind CSS",
+    "MongoDB",
+    "NextAuth.js",
+    "JSON Web Tokens (JWT)",
+    "Node.js",
+    "Express.js"
+  ],
+  briefDescription:
+    "A premium full-stack ecosystem designed for developers, students, and entrepreneurs to pitch, vault, and collaboratively brainstorm creative concepts while systematically tracking them from raw ideas to production-ready projects.",
+  liveProjectLink: "https://n-ten-sigma.vercel.app",
+  githubRepositoryLink: "https://github.com/sabbirhossainlkj/ideavault-client-",
+  
+  features: [
+    "Secure User Authentication via NextAuth integrating JWT session strategy (Google & Credentials)",
+    "Interactive & Responsive Ideation Dashboard with Analytics",
+    "Comprehensive Idea Management (Create, Edit, Category Tagging, & Archive)",
+    "Dynamic Concept Video Integration for Guided Project Pitching",
+    "Robust Server-Side Protected Routes & Role-Based Access Control in Express API using JWT verification"
+  ],
+  
+  challengesFaced: [
+    "Architecting bulletproof session persistence using JWT strategy across Next.js hybrid Server/Client components and syncing tokens with an external Express.js backend.",
+    "Designing a flexible MongoDB schema to efficiently query nested data structures for dynamic user dashboards.",
+    "Eliminating UI layout shifts (CLS) on data-heavy analytics screens while maintaining deep mobile responsiveness.",
+    "Optimizing API endpoints and image loading inside Next.js to hit high scores on core web vitals."
+  ],
+  
+  futurePlans: [
+    "Integrate a secure payment gateway (Stripe/SSLCommerz) for premium premium consultation features.",
+    "Deploy a real-time collaborative workspace using Socket.io or WebRTC for live mentoring sessions.",
+    "Implement an automated Project Documentation & Roadmap generator using AI.",
+    "Introduce a dedicated Peer-Review and Investor Matchmaking dashboard."
+  ],
+  
+  projectImage: "/projects/ideavault-platform.png"
+},
   {
-    id: "1",
+    id: "2",
 
     slug: "online-learning-platform",
 
@@ -56,7 +98,7 @@ export const projects = [
   },
 
   {
-    id: "2",
+    id: "3",
 
     slug: "keen-keeper",
 
@@ -103,7 +145,7 @@ export const projects = [
   },
 
   {
-    id: "3",
+    id: "4",
 
     slug: "digitools-platform",
 

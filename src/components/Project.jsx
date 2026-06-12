@@ -7,18 +7,24 @@ import { motion } from "framer-motion";
 const projects = [
   {
     id: "1",
+    name: "IdeaVault",
+    image: "/image.png",
+    slug: "online-learning-platform",
+  },
+  {
+    id: "2",
     name: "Online Learning Platform",
     image: "/image1.png",
     slug: "online-learning-platform",
   },
   {
-    id: "2",
+    id: "3",
     name: "Keen Keeper",
     image: "/image2.png",
     slug: "keen-keeper",
   },
   {
-    id: "3",
+    id: "4",
     name: "Digitools Platform",
     image: "/image3.png",
     slug: "digitools-platform",

@@ -1,6 +1,7 @@
 "use client";
 
 import { FaCode, FaServer, FaTools } from "react-icons/fa";
+import { motion } from "framer-motion"; 
 
 const skills = [
   {
@@ -39,73 +40,109 @@ const skills = [
 ];
 
 const SkillsSection = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2 }, 
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
   return (
     <section
       id="skills"
       className="relative py-20 px-6 bg-[#050816] text-white overflow-hidden"
     >
-      <div className="absolute w-[500px] h-[500px] bg-blue-500/20 blur-[140px] rounded-full -top-40 -left-40"></div>
-      <div className="absolute w-[500px] h-[500px] bg-cyan-500/20 blur-[140px] rounded-full -bottom-40 -right-40"></div>
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.5 }}
+        className="absolute w-[500px] h-[500px] bg-blue-500/20 blur-[140px] rounded-full -top-40 -left-40"
+      ></motion.div>
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.5, delay: 0.2 }}
+        className="absolute w-[500px] h-[500px] bg-cyan-500/20 blur-[140px] rounded-full -bottom-40 -right-40"
+      ></motion.div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-
-        <h2 className="text-4xl md:text-6xl font-bold text-center mb-20">
+        
+        <motion.h2 
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-6xl font-bold text-center mb-20"
+        >
           My <span className="text-blue-500">Skills</span>
-        </h2>
+        </motion.h2>
 
-        <div className="grid md:grid-cols-3 gap-10">
-
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid md:grid-cols-3 gap-10"
+        >
           {skills.map((group) => (
-            <div
+            <motion.div
               key={group.title}
-              className="relative group p-[2px] rounded-2xl bg-gradient-to-r from-white/10 to-white/5 hover:scale-[1.05] transition duration-300"
+              variants={cardVariants}
+              className="relative group p-[2px] rounded-2xl bg-gradient-to-r from-white/10 to-white/5 hover:scale-[1.03] transition duration-300"
             >
+              {/* Card Outer Glow effect on Hover */}
+              <div className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-30 blur-xl bg-gradient-to-r ${group.color} transition duration-500`}></div>
 
-              <div className={`absolute inset-0 rounded-2xl opacity-30 blur-xl bg-gradient-to-r ${group.color}`}></div>
-
-              <div className="relative bg-[#0b1220] rounded-2xl p-6 border border-white/10 backdrop-blur-xl">
-
+              <div className="relative bg-[#0b1220] rounded-2xl p-6 border border-white/10 backdrop-blur-xl h-full">
+                
+                {/* Group Header */}
                 <div className="flex items-center gap-3 mb-6">
-
                   <div className={`text-2xl p-3 rounded-xl bg-gradient-to-r ${group.color} text-white shadow-lg`}>
                     {group.icon}
                   </div>
-
-                  <h3 className="text-2xl font-bold">
-                    {group.title}
-                  </h3>
-
+                  <h3 className="text-2xl font-bold">{group.title}</h3>
                 </div>
 
                 <div className="space-y-5">
-
                   {group.items.map((skill) => (
                     <div key={skill.name}>
-
+                      
                       <div className="flex justify-between text-sm text-gray-300 mb-1">
                         <span>{skill.name}</span>
                         <span>{skill.level}%</span>
                       </div>
 
                       <div className="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
-
-                        <div
-                          className={`h-full bg-gradient-to-r ${group.color} rounded-full transition-all duration-700`}
-                          style={{ width: `${skill.level}%` }}
-                        ></div>
-
+                        <motion.div
+                          className={`h-full bg-gradient-to-r ${group.color} rounded-full`}
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${skill.level}%` }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 1, ease: "easeInOut", delay: 0.1 }}
+                        ></motion.div>
                       </div>
 
                     </div>
                   ))}
-
                 </div>
 
               </div>
-            </div>
+            </motion.div>
           ))}
+        </motion.div>
 
-        </div>
       </div>
     </section>
   );

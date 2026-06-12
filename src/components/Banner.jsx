@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import profile from "../../public/porfile.png";
+import { motion } from "framer-motion"; 
 
 import {
   FaGithub,
@@ -12,49 +13,96 @@ import {
 } from "react-icons/fa";
 
 const HeroSection = () => {
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  };
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, 
+      }
+    }
+  };
+
   return (
     <section
       id="home"
       className="relative min-h-screen overflow-hidden bg-[#030712] text-white flex items-center px-6 py-28"
     >
-      <div className="absolute top-[-120px] left-[-120px] w-[450px] h-[450px] bg-cyan-500/20 blur-[140px] rounded-full"></div>
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.5 }}
+        className="absolute top-[-120px] left-[-120px] w-[450px] h-[450px] bg-cyan-500/20 blur-[140px] rounded-full"
+      ></motion.div>
 
-      <div className="absolute bottom-[-120px] right-[-120px] w-[450px] h-[450px] bg-blue-600/20 blur-[140px] rounded-full"></div>
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.5, delay: 0.2 }}
+        className="absolute bottom-[-120px] right-[-120px] w-[450px] h-[450px] bg-blue-600/20 blur-[140px] rounded-full"
+      ></motion.div>
 
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
-        <div className="space-y-7 text-center lg:text-left">
-          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 text-sm font-medium backdrop-blur-md">
-             Available for MERN Stack Projects
-          </div>
+        
+        {/* Left Side: Content */}
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="space-y-7 text-center lg:text-left"
+        >
+          <motion.div 
+            variants={fadeInUp}
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 text-sm font-medium backdrop-blur-md"
+          >
+            Available for MERN Stack Projects
+          </motion.div>
 
-          {/* Heading */}
           <div className="space-y-4">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight">
+            <motion.h1 
+              variants={fadeInUp}
+              className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight"
+            >
               Hi, I'm{" "}
               <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                 Sabbir Hossain
               </span>
-            </h1>
+            </motion.h1>
 
-            <h2 className="text-2xl md:text-4xl font-semibold text-gray-300">
+            <motion.h2 
+              variants={fadeInUp}
+              className="text-2xl md:text-4xl font-semibold text-gray-300"
+            >
               MERN Stack Developer
-            </h2>
+            </motion.h2>
           </div>
 
-          <p className="text-gray-400 text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+          <motion.p 
+            variants={fadeInUp}
+            className="text-gray-400 text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0"
+          >
             I build modern full-stack web applications using{" "}
             <span className="text-cyan-400 font-medium">
               MongoDB, Express.js, React & Next.js, Node.js
             </span>
             . I focus on responsive UI, scalable backend architecture,
             authentication systems and high-performance web experiences.
-          </p>
+          </motion.p>
 
-          <div className="flex flex-wrap gap-5 justify-center lg:justify-start pt-3">
+          <motion.div 
+            variants={fadeInUp}
+            className="flex flex-wrap gap-5 justify-center lg:justify-start pt-3"
+          >
             <a
-              href="/resume.pdf"
-              download
-              className="px-8 py-3 rounded-2xl font-semibold bg-gradient-to-r from-cyan-500 to-blue-600 hover:scale-105 transition-all duration-300 shadow-lg shadow-cyan-500/20"
+              href="https://drive.google.com/file/d/1XbIKfnrf2rmwZqwkpHSlacSM2rqwzEYm/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3 rounded-2xl font-semibold bg-gradient-to-r from-cyan-500 to-blue-600 hover:scale-105 transition-all duration-300 shadow-lg shadow-cyan-500/20 block"
             >
               Download Resume
             </a>
@@ -65,26 +113,17 @@ const HeroSection = () => {
             >
               View Projects
             </Link>
-          </div>
+          </motion.div>
 
-          <div className="flex justify-center lg:justify-start gap-5 pt-6">
+          <motion.div 
+            variants={fadeInUp}
+            className="flex justify-center lg:justify-start gap-5 pt-6"
+          >
             {[
-              {
-                icon: <FaGithub />,
-                link: "https://github.com/sabbirhossainlkj/",
-              },
-              {
-                icon: <FaLinkedin />,
-                link: "https://www.linkedin.com/in/sabbirhossain24",
-              },
-              {
-                icon: <FaFacebook />,
-                link: "https://www.facebook.com/sabbir.hossain.101851",
-              },
-              {
-                icon: <FaTwitter />,
-                link: "https://x.com/SabbirH59155",
-              },
+              { icon: <FaGithub />, link: "https://github.com/sabbirhossainlkj/" },
+              { icon: <FaLinkedin />, link: "https://www.linkedin.com/in/sabbirhossain24" },
+              { icon: <FaFacebook />, link: "https://www.facebook.com/sabbir.hossain.101851" },
+              { icon: <FaTwitter />, link: "https://x.com/SabbirH59155" },
             ].map((social, index) => (
               <a
                 key={index}
@@ -95,9 +134,9 @@ const HeroSection = () => {
                 {social.icon}
               </a>
             ))}
-          </div>
+          </motion.div>
 
-          <div className="pt-8">
+          <motion.div variants={fadeInUp} className="pt-8">
             <p className="text-gray-500 text-sm mb-4">
               Tech Stack I Work With
             </p>
@@ -113,17 +152,22 @@ const HeroSection = () => {
               ].map((tech, index) => (
                 <span
                   key={index}
-                  className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm hover:border-cyan-400 transition"
+                  className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm hover:border-cyan-400 transition cursor-default"
                 >
                   {tech}
                 </span>
               ))}
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         <div className="flex justify-center">
-          <div className="relative">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+            className="relative"
+          >
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 to-blue-600 blur-3xl opacity-30 animate-pulse"></div>
 
             <div className="relative w-[300px] h-[300px] sm:w-[420px] sm:h-[420px] lg:w-[480px] lg:h-[480px] rounded-full p-[5px] bg-gradient-to-tr from-blue-500 via-cyan-400 to-blue-700">
@@ -138,17 +182,26 @@ const HeroSection = () => {
               </div>
             </div>
 
-            <div className="absolute bottom-5 -left-10 bg-white/10 border border-white/10 backdrop-blur-lg px-5 py-4 rounded-2xl shadow-xl">
+            <motion.div 
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute bottom-5 -left-10 bg-white/10 border border-white/10 backdrop-blur-lg px-5 py-4 rounded-2xl shadow-xl"
+            >
               <p className="text-sm text-gray-300">Experience</p>
               <h3 className="text-2xl font-bold text-cyan-400">MERN</h3>
-            </div>
+            </motion.div>
 
-            <div className="absolute top-8 -right-10 bg-white/10 border border-white/10 backdrop-blur-lg px-5 py-4 rounded-2xl shadow-xl">
+            <motion.div 
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              className="absolute top-8 -right-10 bg-white/10 border border-white/10 backdrop-blur-lg px-5 py-4 rounded-2xl shadow-xl"
+            >
               <p className="text-sm text-gray-300">Projects</p>
               <h3 className="text-2xl font-bold text-blue-400">20+</h3>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
+
       </div>
     </section>
   );

@@ -66,12 +66,33 @@ const ProjectDetailsPage = ({ params }) => {
             <ActionLink href={singleProject.liveProjectLink} variant="primary">
               Live Project
             </ActionLink>
-            <ActionLink
-              href={singleProject.githubRepositoryLink}
-              variant="secondary"
-            >
-              💻 GitHub Repository
-            </ActionLink>
+
+            {singleProject.githubRepositoryLink && (
+              <ActionLink
+                href={singleProject.githubRepositoryLink}
+                variant="secondary"
+              >
+                💻 GitHub Repository
+              </ActionLink>
+            )}
+
+            {singleProject.githubClientLink && (
+              <ActionLink
+                href={singleProject.githubClientLink}
+                variant="secondary"
+              >
+                💻 Client Repository
+              </ActionLink>
+            )}
+
+            {singleProject.githubServerLink && (
+              <ActionLink
+                href={singleProject.githubServerLink}
+                variant="secondary"
+              >
+                ⚙️ Server Repository
+              </ActionLink>
+            )}
           </div>
         </motion.div>
 
@@ -210,7 +231,7 @@ const ListItems = ({ items, bulletColor }) => {
 export const projects = [
   {
     id: "1",
-    slug: "online-book-delivery-system", 
+    slug: "online-book-delivery-system",
     projectName: "BiblioDrop Platform",
     category: "Full-Stack Web Application",
     mainTechnologyStack: [
@@ -226,7 +247,7 @@ export const projects = [
       "BiblioDrop is a modern full-stack book delivery management ecosystem. It streamlines how users discover books and track deliveries in real-time, while offering administrators unified control through secure role-based analytics dashboards.",
     liveProjectLink: "https://a10-bibliodrop-client.vercel.app",
     githubClientLink: "https://github.com/sabbirhossainlkj/bibliodrop_client",
-    githubServerLink: "https://github.com/sabbirhossainlkj/bibliodrop_servar", 
+    githubServerLink: "https://github.com/sabbirhossainlkj/bibliodrop_servar",
     features: [
       "Secure hybrid authentication using NextAuth.js (Google & Credentials) powered by JWT session strategy.",
       "Advanced product discovery featuring instant searching, dynamic filtering, and live availability tracking.",
@@ -246,7 +267,7 @@ export const projects = [
       "Develop an AI-driven smart recommendation engine to suggest books based on user browsing history.",
       "Incorporate a built-in map tracking system using Mapbox or Google Maps API for interactive delivery tracking.",
     ],
-    projectImage: "/projects/bibliodrop-platform.png", 
+    projectImage: "/projects/bibliodrop-platform.png",
   },
   {
     id: "2",

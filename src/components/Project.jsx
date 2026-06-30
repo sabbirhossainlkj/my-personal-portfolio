@@ -2,29 +2,35 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion"; 
+import { motion } from "framer-motion";
 
 const projects = [
   {
     id: "1",
+    name: "BiblioDrop ",
+    image: "/image5.png",
+    slug: "Online Book Delivery Management System",
+  },
+  {
+    id: "2",
     name: "IdeaVault",
     image: "/image.png",
     slug: "online-learning-platform",
   },
   {
-    id: "2",
+    id: "3",
     name: "Online Learning Platform",
     image: "/image1.png",
     slug: "online-learning-platform",
   },
   {
-    id: "3",
+    id: "4",
     name: "Keen Keeper",
     image: "/image2.png",
     slug: "keen-keeper",
   },
   {
-    id: "4",
+    id: "5",
     name: "Digitools Platform",
     image: "/image3.png",
     slug: "digitools-platform",
@@ -37,7 +43,7 @@ const ProjectsSection = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2, 
+        staggerChildren: 0.2,
       },
     },
   };

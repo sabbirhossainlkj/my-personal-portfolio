@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { use } from "react"; // ১. React থেকে use হুক ইমপোর্ট করা হয়েছে
+import { use } from "react"; 
 
 const cardContainerVariants = {
   hidden: { opacity: 0 },
@@ -14,9 +14,7 @@ const cardItemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-// ২. async কিওয়ার্ডটি বাদ দেওয়া হয়েছে
 const ProjectDetailsPage = ({ params }) => {
-  // ৩. await params এর পরিবর্তে use(params) ব্যবহার করা হয়েছে
   const { id } = use(params);
   const singleProject = projects.find((project) => project.id === id);
 

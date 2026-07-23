@@ -284,8 +284,9 @@ export const projects = [
     briefDescription:
       "A premium full-stack ecosystem designed for developers, students, and entrepreneurs to pitch, vault, and collaboratively brainstorm creative concepts while systematically tracking them from raw ideas to production-ready projects.",
     liveProjectLink: "https://n-ten-sigma.vercel.app",
-    githubRepositoryLink:
+    githubClientLink:
       "https://github.com/sabbirhossainlkj/ideavault-client-",
+      githubServerLink: "https://github.com/sabbirhossainlkj/ideavault-server",
     features: [
       "Secure User Authentication via NextAuth integrating JWT session strategy (Google & Credentials)",
       "Interactive & Responsive Ideation Dashboard with Analytics",
@@ -348,6 +349,45 @@ export const projects = [
   },
   {
     id: "4",
+    slug: "EcoSphere Marketplace",
+    projectName: "EcoSphere Marketplace",
+    category: "Full Stack Web Application",
+    mainTechnologyStack: [
+      "Next.js",
+      "Tailwind CSS",
+      "MongoDB",
+      "NextAuth",
+      "Node.js",
+      "Express.js",
+    ],
+    briefDescription:
+      "EcoSphere Marketplace is a next-generation eco-commerce platform designed to deliver a clean, responsive, and user-friendly shopping experience while showcasing modern full-stack web development practices.",
+    liveProjectLink: "https://ecosphere-marketplace.vercel.app",
+    githubRepositoryLink:
+      "https://github.com/sabbirhossainlkj/ecosphere-marketplace",
+    features: [
+      "User Authentication System",
+      "Responsive Dashboard",
+      "Course Management",
+      "Video Lesson Integration",
+      "Protected Routes",
+    ],
+    challengesFaced: [
+      "Implementing secure authentication",
+      "Managing dynamic course data",
+      "Building responsive dashboard UI",
+      "Optimizing performance in Next.js",
+    ],
+    futurePlans: [
+      "Add payment gateway integration",
+      "Implement live classes",
+      "Add student certificates",
+      "Introduce instructor dashboard",
+    ],
+    projectImage: "/projects/EcoSphere Marketplace.png",
+  },
+  {
+    id: "5",
     slug: "keen-keeper",
     projectName: "Keen Keeper",
     category: "Productivity Web App",
@@ -380,7 +420,7 @@ export const projects = [
     projectImage: "/projects/keen-keeper.png",
   },
   {
-    id: "5",
+    id: "6",
     slug: "digitools-platform",
     projectName: "DigiTools Platform",
     category: "Digital Tools Marketplace",

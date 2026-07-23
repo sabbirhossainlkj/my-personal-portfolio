@@ -26,12 +26,18 @@ const projects = [
   },
   {
     id: "4",
+    name: "EcoSphere Marketplace",
+    image: "/image8.png",
+    slug: "ecosphere-marketplace",
+  },
+  {
+    id: "5",
     name: "Keen Keeper",
     image: "/image2.png",
     slug: "keen-keeper",
   },
   {
-    id: "5",
+    id: "6",
     name: "Digitools Platform",
     image: "/image3.png",
     slug: "digitools-platform",
